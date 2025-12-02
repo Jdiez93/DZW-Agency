@@ -1,0 +1,421 @@
+---
+import "../styles/global.css";
+const { title = "Agencia Web", description = "Creamos páginas web profesionales." } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo-agencia.jpg" />
+    <!-- SEO Básico -->
+<meta name="robots" content="index, follow" />
+<meta name="author" content="DZW Agency" />
+<meta name="theme-color" content="#0f172a" />
+<!-- EmailJS global -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DZW Agency" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content="https://tudominio.com" />
+<meta property="og:image" content="https://tudominio.com/preview.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="https://tudominio.com/preview.jpg" />
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DZW Agency",
+  "url": "https://tudominio.com",
+  "description": "Agencia especializada en diseño web, desarrollo, hosting y mantenimiento.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DZW Agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tudominio.com/logo.png"
+    }
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "dzwagency@gmail.com",
+    "availableLanguage": ["Spanish"]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DZW Agency",
+  "image": "https://tudominio.com/logo.png",
+  "@id": "https://tudominio.com",
+  "url": "https://tudominio.com",
+  "telephone": "+34XXXYYYZZZ",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "España",
+    "addressCountry": "ES"
+  },
+  "openingHours": "Mo-Fr 09:00-20:00"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Diseño y desarrollo web",
+  "provider": {
+    "@type": "Organization",
+    "name": "DZW Agency",
+    "url": "https://tudominio.com"
+  },
+  "areaServed": "ES",
+  "description": "Creación de páginas web profesionales, mantenimiento, hosting y optimización."
+}
+</script>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body class="bg-slate-900 text-slate-100 antialiased">
+    <header
+  id="site-header"
+  class="fixed top-0 left-0 z-40 w-full bg-slate-900/50 backdrop-blur border-b border-slate-800 transition-all duration-300"
+>
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img 
+        src="/logo-agencia.jpg" 
+        alt="Logo DZW AGENCY" 
+        class="w-9 h-9 object-cover rounded-md shadow-sm"
+      />
+      <h1 class="text-xl font-bold tracking-wide">DZW AGENCY</h1>
+    </div>
+
+    <!-- Botón menú móvil -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-600 hover:border-blue-500 hover:bg-slate-800/80 transition"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      type="button"
+    >
+      <!-- Icono hamburguesa -->
+      <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+      <!-- Icono cerrar -->
+      <svg id="mobile-menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+
+    <!-- Menú escritorio -->
+    <ul class="hidden md:flex gap-8 text-sm items-center">
+
+  <li>
+    <a href="/" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 12l2-2m0 0l7-7 7 7m-9 2v10m4-10v10m-9 10h14"/>
+      </svg>
+      Inicio
+    </a>
+  </li>
+
+  <li>
+    <a href="/servicios" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13 16h-1v-4h-1m4-4h1v4h1M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+      </svg>
+      Servicios
+    </a>
+  </li>
+
+  <li>
+    <a href="/sobre-nosotros" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/>
+      </svg>
+      Nosotros
+    </a>
+  </li>
+
+  <li>
+  <a href="/recursos" class="flex items-center gap-2 hover:text-blue-400 transition">
+    <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M7 3h8l4 4v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"/>
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 12h6M9 16h6M9 8h3"/>
+    </svg>
+    Blog
+  </a>
+</li>
+
+
+  <li>
+    <a href="/contacto" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 14c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/>
+      </svg>
+      Contacto
+    </a>
+  </li>
+
+  <li>
+  <a href="/faq" class="flex items-center gap-2 hover:text-blue-400 transition">
+    <svg class="w-5 h-5 menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M7 14h10M12 6v2m0 10v2m10-7H2" />
+    </svg>
+    FAQ
+  </a>
+</li>
+
+
+</ul>
+
+
+  </nav>
+
+  <!-- Menú móvil desplegable -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800 bg-slate-950/95">
+    <nav class="max-w-6xl mx-auto px-6 py-4">
+      <ul class="flex flex-col gap-4 text-sm">
+  <li><a href="/" data-path="/" class="block py-1 hover:text-blue-400">Inicio</a></li>
+  <li><a href="/servicios" data-path="/servicios" class="block py-1 hover:text-blue-400">Servicios</a></li>
+  <li><a href="/sobre-nosotros" data-path="/sobre-nosotros" class="block py-1 hover:text-blue-400">Nosotros</a></li>
+  <li><a href="/recursos" data-path="/sobre-nosotros" class="block py-1 hover:text-blue-400">Blog</a></li>
+  <li><a href="/contacto" data-path="/contacto" class="block py-1 hover:text-blue-400">Contacto</a></li>
+  <li><a href="/faq" data-path="/contacto" class="block py-1 hover:text-blue-400">FAQ</a></li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+<footer class="w-full bg-slate-950 border-t border-slate-800 pt-16 pb-10 mt-32">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-12 relative footer-grid">
+
+
+    <!-- Logo + Descripción -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="/logo-agencia.jpg" alt="DZW AGENCY Logo" class="w-10 h-10 object-contain" />
+        <h3 class="text-xl font-bold">DZW AGENCY</h3>
+      </div>
+
+      <p class="text-slate-400 text-sm leading-relaxed">
+        Creamos páginas web modernas, rápidas y diseñadas para convertir visitas en clientes.
+        Diseño, desarrollo, mantenimiento y hosting profesional.
+      </p>
+    </div>
+
+    <!-- Navegación -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Navegación</h4>
+      <ul class="space-y-2 text-slate-300 text-sm">
+        <li><a href="/" class="hover:text-blue-400 transition">Inicio</a></li>
+        <li><a href="/servicios" class="hover:text-blue-400 transition">Servicios</a></li>
+        <li><a href="/sobre-nosotros" class="hover:text-blue-400 transition">Nosotros</a></li>
+        <li><a href="/recursos" class="hover:text-blue-400 transition">Blog</a></li>
+        <li><a href="/contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+        <li><a href="/faq" class="hover:text-blue-400 transition">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Servicios -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+      <ul class="space-y-2 text-slate-300 text-sm">
+        <li>Diseño y desarrollo web</li>
+        <li>Mantenimiento y soporte</li>
+        <li>Hosting y dominios</li>
+        <li>Optimización de velocidad</li>
+        <li>SEO técnico básico</li>
+      </ul>
+    </div>
+
+    <!-- CONTACTO -->
+<div class="space-y-6">
+  <h4 class="text-lg font-semibold">Contacto</h4>
+
+  <ul class="space-y-4 text-slate-300 text-sm">
+
+    <!-- UBICACIÓN -->
+    <li class="flex items-center gap-3">
+      <div class="w-9 h-9 flex items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20">
+        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 1c-5 0-9 2.5-9 5v2h18v-2c0-2.5-4-5-9-5z"/>
+        </svg>
+      </div>
+      <span class="text-slate-300">España</span>
+    </li>
+
+    <!-- EMAIL -->
+   <li class="flex items-center gap-3">
+  <div class="w-9 h-9 flex items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20">
+    <svg
+      class="w-5 h-5 text-blue-400"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"
+      />
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        ry="2"
+      />
+    </svg>
+  </div>
+  <span class="text-slate-300 break-words">jorgediezrodriguez2004@gmail.com</span>
+</li>
+
+
+    <!-- TELÉFONO -->
+    <li class="flex items-center gap-3">
+      <div class="w-9 h-9 flex items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20">
+        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3.09 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72 12.9 12.9 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.86 6.86l1.27-1.27a2 2 0 0 1 2.11-.45 12.9 12.9 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
+      <span class="text-slate-300">+34 684 313 491</span>
+    </li>
+
+  </ul>
+</div>
+
+
+  <!-- COPYRIGHT -->
+  <div class="border-t border-slate-800 mt-12 pt-6 text-center text-slate-500 text-xs">
+    © {new Date().getFullYear()} DZW AGENCY — Todos los derechos reservados.
+  </div>
+</footer>
+
+<script>
+  if (typeof window !== "undefined") {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("mobile-menu-icon-open");
+    const iconClose = document.getElementById("mobile-menu-icon-close");
+    const header = document.getElementById("site-header");
+
+    // Toggle menú móvil
+    if (button && menu && iconOpen && iconClose) {
+      button.addEventListener("click", () => {
+        const isHidden = menu.classList.contains("hidden");
+
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          button.setAttribute("aria-expanded", "true");
+          iconOpen.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+        } else {
+          menu.classList.add("hidden");
+          button.setAttribute("aria-expanded", "false");
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+        }
+      });
+    }
+
+    // Efecto de scroll en el header
+    if (header) {
+      const handleScroll = () => {
+        if (window.scrollY > 10) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      };
+
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    // ⭐ Resaltar página activa
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll("a[data-path]").forEach((link) => {
+      const linkPath = link.getAttribute("data-path");
+
+      if (linkPath === currentPath) {
+        link.classList.add("nav-active");
+      }
+    });
+  }
+
+  // ===========================
+// REVEAL ON SCROLL
+// ===========================
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // vuelve a ocultarse al subir
+      }
+    });
+  },
+  {
+    threshold: 0.15, // 15% del elemento debe verse para activarse
+    rootMargin: "0px 0px -5% 0px"
+  }
+);
+
+revealElements.forEach((el) => revealObserver.observe(el));
+
+</script>
+
+
+
+  </body>
+</html>

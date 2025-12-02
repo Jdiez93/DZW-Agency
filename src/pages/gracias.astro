@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Gracias · DZW AGENCY"
+  description="Hemos recibido tu mensaje. En breve nos pondremos en contacto contigo."
+>
+  <section class="reveal fade-up max-w-3xl mx-auto px-6 py-24 md:py-32 text-center space-y-10">
+    <!-- Icono de confirmación -->
+    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/15 border border-green-500/50 shadow-lg shadow-green-900/40">
+      <svg
+        class="w-10 h-10 text-green-400"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+
+    <div class="space-y-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold">
+        ¡Gracias por tu mensaje! 🙌
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Hemos recibido tu solicitud correctamente.  
+        Revisaremos tu mensaje y te responderemos lo antes posible con una propuesta clara y sin compromiso.
+      </p>
+    </div>
+
+    <div class="space-y-2 text-slate-400 text-sm md:text-base">
+      <p>Horario habitual de respuesta: de lunes a viernes, de 9:00 a 16:00 (hora España).</p>
+      <p>Si lo prefieres, también puedes escribirnos directamente por email o WhatsApp.</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+      <a
+        href="/"
+        class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/40 transition-transform hover:-translate-y-1"
+      >
+        Volver al inicio
+        <span class="text-2xl">🏠</span>
+      </a>
+
+      <a
+        href="/servicios"
+        class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl border border-slate-600 hover:border-blue-500 hover:bg-slate-800/70 text-sm md:text-base font-semibold transition-transform hover:-translate-y-1"
+      >
+        Ver nuestros servicios
+        <span class="text-xl">💼</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

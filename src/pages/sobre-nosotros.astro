@@ -1,0 +1,324 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Nosotros · DZW Agency"
+  description="Diseño web, desarrollo, mantenimiento, hosting y soluciones digitales profesionales."
+>
+  <!-- HERO -->
+  <section class="reveal fade-up max-w-6xl mx-auto px-6 pt-28 pb-16">
+    
+
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      DZW AGENCY: expertos en <span class="text-blue-500">diseño</span> y <span class="text-blue-500">desarrollo web</span>.
+    </h1>
+
+    <p class="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+      Creamos páginas web pensadas para atraer clientes, generar confianza y hacer crecer negocios reales.
+      Aquí tienes nuestra historia y nuestra forma de trabajar.
+    </p>
+  </section>
+
+  <!-- SECCIÓN 1: QUIÉNES SOMOS -->
+  <section class="reveal fade-up max-w-6xl mx-auto px-6 py-20">
+    <div class="space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold">Quiénes somos</h2>
+
+      <p class="text-slate-300 text-lg leading-relaxed">
+        Somos un equipo joven especializado en diseño web, desarrollo y optimización. Nos encanta transformar ideas
+        en webs atractivas, rápidas y pensadas para convertir visitas en clientes.
+      </p>
+
+      <p class="text-slate-300 text-lg leading-relaxed">
+        No usamos plantillas genéricas ni complicamos las cosas con tecnicismos. Hablamos claro, trabajamos rápido
+        y buscamos que cada proyecto sea único.
+      </p>
+
+      <ul class="space-y-3 pt-3 text-slate-200 text-base">
+        <li>✔ Enfoque práctico y cercano</li>
+        <li>✔ Proyectos totalmente personalizados</li>
+        <li>✔ Comunicación continua durante el proceso</li>
+        <li>✔ Webs rápidas, estables y bien optimizadas</li>
+      </ul>
+    </div>
+
+    <!-- EQUIPO - CARRUSEL MODERNO -->
+<section class="reveal fade-up mt-28">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
+    Nuestro equipo
+  </h2>
+
+  <!-- CONTENEDOR GENERAL -->
+  <div class="relative max-w-5xl mx-auto">
+
+    <!-- SLIDER -->
+    <div
+      id="team-slider"
+      class="flex gap-8 overflow-x-auto snap-x snap-mandatory px-4 py-6 scrollbar-hide scroll-smooth cursor-grab active:cursor-grabbing"
+    >
+
+      <!-- TARJETA 1 -->
+      <div
+        class="team-card min-w-[85%] md:min-w-[380px] bg-slate-900/40 p-8 rounded-2xl border border-blue-500/10 shadow-lg snap-center transform transition hover:-translate-y-2 hover:shadow-blue-600/20"
+      >
+        <div class="flex flex-col items-center text-center space-y-6">
+          <div
+            class="relative w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl"
+          >
+            <img
+              src="Jorge.png"
+              alt="Mi foto"
+              class="object-cover w-full h-full"
+            />
+          </div>
+
+          <h3 class="text-2xl font-bold name-sweep">Jorge Díez Rodríguez</h3>
+
+
+
+          <p class="text-slate-300 text-lg max-w-sm">
+            Diseñador y desarrollador web especializado en interfaces limpias,
+            rápidas y atractivas para el usuario.
+          </p>
+
+          <div class="text-slate-400 space-y-2 text-sm">
+            <p>🎓 Desarrollo Web & UI/UX | Curso de Ciberseguridad | Master en Inteligencia Artificial</p>
+            <p>🧩 Experiencia de 4 meses en Integrasys S.A.</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- FUTURAS TARJETAS (solo duplicar este bloque) -->
+      
+
+      
+      <!--
+      <div class="team-card min-w-[85%] md:min-w-[380px] ...">
+        ...
+      </div>
+      -->
+
+    </div>
+
+    <!-- BOTONES NEXT / PREV -->
+    <button
+      id="team-prev"
+      class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-slate-800/70 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition"
+    >
+      ‹
+    </button>
+
+    <button
+      id="team-next"
+      class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-slate-800/70 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition"
+    >
+      ›
+    </button>
+
+  </div>
+</section>
+
+<style>
+  /* Oculta scrollbar en todos los navegadores */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  // Carrusel con botones
+  const slider = document.getElementById("team-slider");
+  const next = document.getElementById("team-next");
+  const prev = document.getElementById("team-prev");
+
+  const cardWidth = 400; // ancho aproximado tarjeta
+
+  next?.addEventListener("click", () => {
+    slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+  });
+
+  prev?.addEventListener("click", () => {
+    slider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  });
+
+  // DRAG con ratón
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener("mouseleave", () => (isDown = false));
+  slider.addEventListener("mouseup", () => (isDown = false));
+
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+</script>
+
+    
+  </section>
+
+  <!-- SEPARADOR SUAVE -->
+  <div class="w-full h-px bg-slate-800/60 max-w-6xl mx-auto my-12 md:my-20"></div>
+
+  <!-- SECCIÓN 2: VALORES EN TARJETAS -->
+  <section class="max-w-6xl mx-auto px-6 py-20 md:py-28 space-y-12 hero-fade-up">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Nuestros valores</h2>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        La base de cada proyecto: claridad, detalle y compromiso.
+      </p>
+    </div>
+
+    <div class="reveal fade-up bg-slate-900/40 grid md:grid-cols-3 gap-8 lg:gap-10 mt-4">
+      <!-- Claridad -->
+      <article
+        class="bg-slate-900/40 border border-blue-500/30 rounded-2xl p-6 md:p-7 space-y-3 shadow-md shadow-slate-950/60"
+      >
+        <h3 class="text-xl font-semibold">Claridad</h3>
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          Hablamos sin tecnicismos. Cada paso del proyecto es transparente y fácil de entender:
+          qué vamos a hacer, cuánto cuesta y cuándo estará listo.
+        </p>
+      </article>
+
+      <!-- Detalle -->
+      <article
+        class="bg-slate-900/40 border border-blue-500/30 rounded-2xl p-6 md:p-7 space-y-3 shadow-md shadow-slate-950/60"
+      >
+        <h3 class="text-xl font-semibold">Detalle</h3>
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          Cuidamos los detalles: tipografías, espacios, estructura, tiempos de carga y experiencia de usuario.
+          Todo suma para dar una sensación profesional desde el primer segundo.
+        </p>
+      </article>
+
+      <!-- Compromiso -->
+      <article
+        class="bg-slate-900/40 border border-blue-500/30 rounded-2xl p-6 md:p-7 space-y-3 shadow-md shadow-slate-950/60"
+      >
+        <h3 class="text-xl font-semibold">Compromiso</h3>
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          No desaparecemos después de lanzar la web. Si lo deseas, seguimos contigo con mantenimiento, cambios
+          y soporte para que tu web no se quede atrás.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: POR QUÉ ELEGIRNOS (TABLA COMPARATIVA) -->
+  <section class="reveal fade-up max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Por qué elegirnos</h2>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Una comparación rápida entre trabajar con DZW AGENCY y hacerlo “por tu cuenta” o con soluciones genéricas.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm md:text-base border-separate border-spacing-y-3">
+        <thead>
+          <tr class="text-left">
+            <th class="px-4 md:px-6 py-3 rounded-l-xl bg-slate-900/80 border border-slate-800 font-semibold">
+              Aspecto
+            </th>
+            <th class="px-4 md:px-6 py-3 bg-slate-900/80 border-t border-b border-slate-800 font-semibold">
+              Con DZW AGENCY
+            </th>
+            <th class="px-4 md:px-6 py-3 rounded-r-xl bg-slate-900/40 border border-slate-800 font-semibold">
+              Genérico / por tu cuenta
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="align-top">
+            <td class="px-4 md:px-6 py-4 bg-slate-900/40 rounded-l-xl border border-slate-800">
+              Diseño y estructura
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/60 border-t border-b border-slate-800">
+              ✔ Diseño a medida, pensado para tu negocio y tu público objetivo.  
+              ✔ Estructura clara que guía al usuario hacia el contacto.
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/20 rounded-r-xl border border-slate-800">
+              ✖ Plantillas genéricas que se parecen a muchas otras webs.  
+              ✖ Estructura poco pensada y sin estrategia.
+            </td>
+          </tr>
+
+          <tr class="align-top">
+            <td class="px-4 md:px-6 py-4 bg-slate-900/40 rounded-l-xl border border-slate-800">
+              Tiempo y soporte
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/60 border-t border-b border-slate-800">
+              ✔ Plazos claros y comunicación directa.  
+              ✔ Soporte antes, durante y después del lanzamiento.
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/20 rounded-r-xl border border-slate-800">
+              ✖ Pierdes tiempo probando, buscando soluciones y arreglando errores.  
+              ✖ Soporte limitado o inexistente.
+            </td>
+          </tr>
+
+          <tr class="align-top">
+            <td class="px-4 md:px-6 py-4 bg-slate-900/40 rounded-l-xl border border-slate-800">
+              Rendimiento y técnica
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/60 border-t border-b border-slate-800">
+              ✔ Web rápida, optimizada para móvil y con buenas prácticas de SEO técnico.  
+              ✔ Hosting y mantenimiento opcional a tu medida.
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/20 rounded-r-xl border border-slate-800">
+              ✖ Web que puede ser lenta o tener problemas en móvil.  
+              ✖ Nadie cuida el rendimiento ni las actualizaciones.
+            </td>
+          </tr>
+
+          <tr class="align-top">
+            <td class="px-4 md:px-6 py-4 bg-slate-900/40 rounded-l-xl border border-slate-800">
+              Visión a largo plazo
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/60 border-t border-b border-slate-800">
+              ✔ Web preparada para crecer: nuevas secciones, campañas, cambios…  
+              ✔ Relación a largo plazo si quieres apoyo continuo.
+            </td>
+            <td class="px-4 md:px-6 py-4 bg-slate-900/20 rounded-r-xl border border-slate-800">
+              ✖ Web creada “para salir del paso” que se queda vieja rápido.  
+              ✖ Cada cambio supone empezar desde cero.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center hero-fade-up space-y-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold">¿Hablamos de tu próximo proyecto?</h2>
+    <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+      Cuéntanos qué necesitas y te preparamos una propuesta clara, rápida y sin compromiso.
+    </p>
+
+    <a
+      href="/contacto"
+      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-blue-600/30 transition-transform hover:-translate-y-1"
+    >
+      Ir a la página de contacto ➡️
+    </a>
+  </section>
+</BaseLayout>

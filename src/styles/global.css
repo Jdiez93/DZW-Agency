@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+
+/* Header: efecto al hacer scroll */
+/* Header: efecto al hacer scroll */
+#site-header {transition: all, duration 300ms;}
+  /* ya tiene transición desde las clases Tailwind (transition-all, duration-300) */
+
+
+#site-header.header-scrolled {
+  background-color: rgba(15, 23, 42, 0.96); /* slate-900 casi opaco */
+  border-bottom-color: rgba(30, 64, 175, 0.7); /* un toque azul en el borde */
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+}
+
+
+/* TIMELINE: líneas que conectan los pasos */
+
+/* Cada paso tiene posición relativa para poder dibujar la línea */
+.process-step {
+  position: relative;
+}
+
+/* LÍNEA HORIZONTAL (desktop) */
+@media (min-width: 768px) {
+  .process-step::after {
+    content: "";
+    position: absolute;
+    /* altura de la línea: centrada respecto al círculo del icono */
+    top: 48px; /* si la ves muy arriba/abajo, prueba 44 o 52 */
+    left: 70%;
+    width: 80%;
+    height: 2px;
+    background: rgba(59, 130, 246, 0.3); /* azul suave */
+    transform: translateX(0);
+  }
+
+  /* El último de cada fila no dibuja línea hacia la derecha */
+  .process-step:last-child::after {
+    display: none;
+  }
+}
+
+/* LÍNEA VERTICAL (móvil): conecta los pasos uno debajo de otro */
+@media (max-width: 767px) {
+  .process-step::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    width: 2px;
+    height: 50px;
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateX(-50%);
+  }
+
+  .process-step:last-child::after {
+    display: none;
+  }
+}
+
+/* Animación de los iconos del proceso */
+
+.process-icon {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Iconos se animan tanto si pasas por el paso completo como por el propio icono */
+.process-step:hover .process-icon,
+.process-icon:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.65);
+}
+
+/* Animación infinita para iconos de tecnologías */
+.tech-icon {
+  border-radius: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: techPulse 4s ease-in-out infinite;
+}
+
+@keyframes techPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+
+
+
+/* Estilos para que las opciones de los select tengan fondo oscuro y texto visible */
+select option {
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9; /* slate-100 */
+}
+.hero-fade-up {
+  animation: heroFadeUp 0.8s ease-out both;
+}
+
+.hero-fade-up-delayed {
+  animation: heroFadeUp 0.9s ease-out both;
+  animation-delay: 0.1s;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-floating {
+  animation: floatingCard 4s ease-in-out infinite;
+}
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Enlace activo del menú */
+.nav-active {
+  color: #3b82f6 !important; /* Azul eléctrico */
+  position: relative;
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+  animation: underlineSlide 0.4s ease forwards;
+}
+
+@keyframes underlineSlide {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+
+/* ===========================
+   REVEAL ANIMATIONS (GLOBAL)
+   =========================== */
+
+/* Estado inicial de todos los reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Cuando el elemento entra en pantalla */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto fade-up */
+.fade-up {
+  transform: translateY(40px);
+}
+
+/* Efecto fade-down */
+.fade-down {
+  transform: translateY(-40px);
+}
+
+/* Efecto fade-left */
+.fade-left {
+  transform: translateX(-40px);
+}
+
+/* Efecto fade-right */
+.fade-right {
+  transform: translateX(40px);
+}
+
+/* Efecto zoom */
+.fade-zoom {
+  transform: scale(0.85);
+}
+
+/* Efecto blur */
+.fade-blur {
+  filter: blur(6px);
+}
+
+.reveal.visible.fade-blur {
+  filter: blur(0);
+}
+
+/* Animación infinita para iconos del menú */
+.menu-icon {
+  display: inline-block;
+  animation: iconFloat 3s ease-in-out infinite;
+  transform-origin: center;
+  opacity: 0.85;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-3px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* ESTILO DEL ENLACE ACTIVO */
+.nav-active {
+  color: #3b82f6 !important; /* azul electro */
+  font-weight: 600;
+}
+
+.nav-active svg {
+  stroke: #3b82f6 !important;
+}
+
+/* Barrido luminoso sobre el nombre del equipo */
+.name-sweep {
+  position: relative;
+  display: inline-block;
+  color: #e5e7eb;            /* color base del texto */
+  overflow: hidden;          /* para que el brillo no se salga */
+}
+
+/* Barra de luz que pasa por encima */
+.name-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.95),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: nameSweep 5s ease-in-out infinite;
+  mix-blend-mode: screen;    /* se mezcla con el texto, queda efecto luz */
+  pointer-events: none;
+}
+
+@keyframes nameSweep {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Líneas verticales del footer */
+.footer-grid > div {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .footer-grid > div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -24px;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(59, 130, 246, 0.7),
+      transparent
+    );
+    border-radius: 10px;
+  }
+}
+
+

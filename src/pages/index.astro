@@ -1,0 +1,452 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Inicio · DZW Agency"
+  description="Diseño web, desarrollo, mantenimiento, hosting y soluciones digitales profesionales."
+>
+  <section
+    id="inicio"
+    class="reveal fade-up max-w-6xl mx-auto px-6 py-24 md:py-32 space-y-8"
+  >
+    <!-- Columna izquierda: texto -->
+    <div class="space-y-6 hero-fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs md:text-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Agencia especializada en creación de páginas web</span>
+      </div>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Tu negocio merece una
+        <span class="text-blue-500">web que venda</span>
+        las 24&nbsp;horas del día.
+      </h2>
+
+      <p class="text-base md:text-lg text-slate-300 leading-relaxed">
+        Creamos páginas web a medida para negocios que quieren dar un salto de calidad.
+        Nos encargamos de todo: diseño, desarrollo, textos, mantenimiento, cambios y
+        hosting. Tú solo te preocupas de atender a tus clientes mientras tu web trabaja
+        por ti en segundo plano.
+      </p>
+
+      <ul class="space-y-2 text-sm md:text-base text-slate-200">
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✅</span>
+          <span>Diseños modernos, rápidos y adaptados a móvil, tablet y ordenador.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✅</span>
+          <span>Planes con mantenimiento y cambios incluidos para que tu web nunca se quede atrás.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="mt-1">✅</span>
+          <span>Hosting optimizado para que tu página cargue rápido y sea segura.</span>
+        </li>
+      </ul>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a
+          href="/contacto"
+          class="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-base font-semibold shadow-lg shadow-blue-600/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+        >
+          Solicitar presupuesto
+          <span class="text-xl">➡️</span>
+        </a>
+
+        <a
+          href="#como-trabajamos"
+          class="inline-flex justify-center items-center px-6 py-3 rounded-lg text-base font-semibold border border-slate-600 hover:bg-slate-800/70 transition-all duration-200 hover:-translate-y-0.5"
+        >
+          Ver cómo trabajamos
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-4 text-xs md:text-sm text-slate-400 pt-2">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span>Plazos claros y comunicación directa</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Soporte cercano y cambios rápidos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: imagen + tarjeta flotante -->
+    <div class="relative hero-fade-up-delayed">
+      <div
+        class="relative rounded-3xl overflow-hidden border border-slate-700 bg-slate-800/70 backdrop-blur shadow-2xl shadow-slate-950/60 group transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.9)]"
+      >
+        <img
+          src="/hero-agencia.png"
+          alt="Diseño y desarrollo de páginas web para negocios"
+          class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+          loading="eager"
+        />
+
+        <!-- Degradado superior -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/40"></div>
+
+        <!-- Texto sobre la imagen -->
+        <div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2 text-sm">
+          <span class="text-xs uppercase tracking-wide text-slate-300"></span>
+          <p class="text-slate-50 font-semibold">
+            Web completa lista en pocos días, con soporte y mantenimiento incluidos.
+          </p>
+        </div>
+      </div>
+
+      
+  </section>
+
+	<!-- SECCIÓN: Qué hacemos / Servicios -->
+<section id="servicios" class="reveal fade-up max-w-6xl mx-auto px-6 py-24 md:py-32 space-y-8">
+  <div class="text-center mb-16 hero-fade-up">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Qué hacemos</h2>
+    <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
+      Creamos páginas web modernas, rápidas, seguras y pensadas para generar resultados reales.
+      Ofrecemos todo lo que tu negocio necesita para tener presencia online sin complicarte.
+    </p>
+  </div>
+
+  
+
+  <div class="grid md:grid-cols-3 gap-10">
+    
+    <!-- Servicio 1 -->
+    <div
+      class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800/80 transition-all duration-300 hero-fade-up"
+    >
+      <div class="text-blue-400 text-4xl mb-4">💻</div>
+      <h3 class="text-2xl font-bold mb-3">Diseño y Desarrollo Web</h3>
+      <p class="text-slate-300">
+        Creamos webs profesionales a medida: rápidas, optimizadas para Google y adaptadas a móvil, tablet y ordenador.
+      </p>
+    </div>
+
+    <!-- Servicio 2 -->
+    <div
+      class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800/80 transition-all duration-300 hero-fade-up"
+    >
+      <div class="text-blue-400 text-4xl mb-4">⚡</div>
+      <h3 class="text-2xl font-bold mb-3">Mantenimiento & Cambios</h3>
+      <p class="text-slate-300">
+        Actualización de textos, imágenes, secciones, arreglos y mejoras continuas. Tu web siempre al día.
+      </p>
+    </div>
+
+    <!-- Servicio 3 -->
+    <div
+      class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 hover:bg-slate-800/80 transition-all duration-300 hero-fade-up"
+    >
+      <div class="text-blue-400 text-4xl mb-4">🌐</div>
+      <h3 class="text-2xl font-bold mb-3">Hosting & Dominio</h3>
+      <p class="text-slate-300">
+        Hosting rápido y seguro, con certificados SSL, copias de seguridad y soporte incluido.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN: Precios / Planes -->
+<section id="precios" class="reveal fade-up max-w-6xl mx-auto px-6 py-24 md:py-32 space-y-8">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="text-center mb-16 hero-fade-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold">Planes y precios</h2>
+      <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
+        Elige el plan que mejor se adapta a tu negocio. Todos incluyen diseño profesional,
+        configuración completa y soporte cercano para que no tengas que preocuparte de nada técnico.
+      </p>
+      <p class="mt-3 text-slate-400 text-sm">
+        Los precios son orientativos. Ajustamos cada proyecto según tus necesidades.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 md:gap-10">
+      <!-- Plan 1: Esencial -->
+      <article
+        class="bg-slate-900/70 border border-slate-800 rounded-2xl p-7 flex flex-col gap-4 hover:border-blue-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-950/80 transition-all duration-300 hero-fade-up"
+      >
+        <h3 class="text-xl font-semibold">Plan Esencial</h3>
+        <p class="text-slate-300 text-sm">
+          Ideal para negocios que necesitan una presencia online clara, simple y profesional.
+        </p>
+
+        <div class="mt-2">
+          <p class="text-3xl font-bold">Desde 350€</p>
+          <p class="text-slate-400 text-xs mt-1">Pago único · Web informativa básica</p>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+          <li>✅ Una página principal + secciones básicas</li>
+          <li>✅ Diseño adaptado a móvil, tablet y ordenador</li>
+          <li>✅ Formulario de contacto simple</li>
+          <li>✅ Configuración básica de SEO</li>
+          <li>✅ Integración con redes sociales</li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
+          Hosting y mantenimiento se contratan por separado.
+        </div>
+
+        <a
+          href="/contacto"
+          class="mt-4 inline-flex justify-center items-center rounded-lg border border-slate-600 px-4 py-2 text-sm font-semibold hover:bg-slate-800/80 transition-colors"
+        >
+          Pedir info del Plan Esencial
+        </a>
+      </article>
+
+      <!-- Plan 2: Profesional (Destacado) -->
+      <article
+        class="relative bg-slate-900 border border-blue-500/80 rounded-2xl p-7 flex flex-col gap-4 shadow-2xl shadow-blue-900/60 scale-[1.03] hero-fade-up"
+      >
+        <div class="absolute -top-3 right-5 px-3 py-1 rounded-full bg-blue-600 text-xs font-semibold">
+          Más elegido
+        </div>
+
+        <h3 class="text-xl font-semibold">Plan Profesional</h3>
+        <p class="text-slate-300 text-sm">
+          Para negocios que quieren una web que no solo se vea bien, sino que convierta visitas en clientes.
+        </p>
+
+        <div class="mt-2">
+          <p class="text-3xl font-bold">Desde 650€</p>
+          <p class="text-slate-400 text-xs mt-1">Pago único + opciones de pago fraccionado</p>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+          <li>✅ Hasta 5–7 secciones personalizadas</li>
+          <li>✅ Textos orientados a ventas y confianza</li>
+          <li>✅ Optimización de velocidad y SEO técnico básico</li>
+          <li>✅ Integración con WhatsApp, email y redes</li>
+          <li>✅ Configuración de Google Analytics o similar</li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
+          Opciones de mantenimiento mensual y hosting incluido.
+        </div>
+
+        <a
+          href="/contacto"
+          class="mt-4 inline-flex justify-center items-center rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold transition-colors"
+        >
+          Quiero el Plan Profesional
+        </a>
+      </article>
+
+      <!-- Plan 3: Avanzado -->
+      <article
+        class="bg-slate-900/70 border border-slate-800 rounded-2xl p-7 flex flex-col gap-4 hover:border-blue-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-950/80 transition-all duration-300 hero-fade-up"
+      >
+        <h3 class="text-xl font-semibold">Plan Avanzado</h3>
+        <p class="text-slate-300 text-sm">
+          Para proyectos que necesitan funcionalidades extra, más páginas o integración con otras herramientas.
+        </p>
+
+        <div class="mt-2">
+          <p class="text-3xl font-bold">Desde 1.000€</p>
+          <p class="text-slate-400 text-xs mt-1">Precio personalizado según el alcance</p>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+          <li>✅ Más secciones, landing pages o idiomas</li>
+          <li>✅ Integraciones personalizadas (formularios avanzados, herramientas externas…)</li>
+          <li>✅ Optimización avanzada de rendimiento</li>
+          <li>✅ Soporte prioritario durante el lanzamiento</li>
+          <li>✅ Sesión de revisión y ajuste final</li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
+          Ideal para negocios que quieren hacer una apuesta fuerte en digital.
+        </div>
+
+        <a
+          href="/contacto"
+          class="mt-4 inline-flex justify-center items-center rounded-lg border border-slate-600 px-4 py-2 text-sm font-semibold hover:bg-slate-800/80 transition-colors"
+        >
+          Solicitar presupuesto avanzado
+        </a>
+      </article>
+    </div>
+
+    <p class="mt-10 text-center text-xs md:text-sm text-slate-500">
+      ¿No encajas en ninguno de estos planes? Escríbenos y te preparamos una propuesta a medida.
+    </p>
+  </div>
+</section>
+
+<!-- SECCIÓN: Cómo trabajamos -->
+<section id="como-trabajamos" class="reveal fade-up max-w-6xl mx-auto px-6 py-24 md:py-32 space-y-8">
+  <div class="text-center mb-20 hero-fade-up">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Cómo trabajamos</h2>
+
+    <p class="mt-6 text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Un proceso claro, sencillo y transparente que te acompaña desde la idea inicial hasta el lanzamiento.
+    </p>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="grid gap-32 md:gap-20 md:grid-cols-3">
+
+    <!-- PASO 1 -->
+    <div class="flex flex-col items-center text-center hero-fade-up process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  💡
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Cuéntanos tu idea</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Nos explicas qué necesitas: estilo, objetivos y cualquier detalle importante.
+      </p>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="flex flex-col items-center text-center hero-fade-up hero-fade-up-delayed process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  📝
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Preparamos tu propuesta</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Te enviamos una propuesta clara: estructura de la web, precios y tiempos.
+      </p>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="flex flex-col items-center text-center hero-fade-up hero-fade-up-delayed process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  🎨
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Diseño y desarrollo</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Creamos una web moderna, rápida y adaptada a todos los dispositivos.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SEGUNDA FILA DEL TIMELINE -->
+  <div class="mt-32 grid gap-32 md:gap-20 md:grid-cols-3">
+
+    <!-- PASO 4 -->
+    <div class="flex flex-col items-center text-center hero-fade-up process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  🔄
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Revisión y cambios</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Te mostramos el resultado y aplicamos todos los cambios necesarios.
+      </p>
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="flex flex-col items-center text-center hero-fade-up hero-fade-up-delayed process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  🚀
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Publicación</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Publicamos tu web, conectamos el dominio y dejamos todo funcionando.
+      </p>
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="flex flex-col items-center text-center hero-fade-up hero-fade-up-delayed process-step">
+      <div class="process-icon w-20 h-20 rounded-full bg-blue-600/20 flex items-center justify-center text-4xl shadow-lg shadow-blue-900/40">
+  🛠️
+</div>
+      <h3 class="mt-6 text-2xl font-bold">Mantenimiento opcional</h3>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Nos encargamos de cambios, soporte y mejoras continuas si quieres despreocuparte.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN: Mantenimiento, Cambios y Hosting -->
+<section id="mantenimiento-hosting" class="reveal fade-up max-w-6xl mx-auto px-6 py-24 md:py-32 space-y-8">
+
+  <!-- TÍTULO GENERAL -->
+  <div class="text-center mb-16 hero-fade-up">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Mantenimiento, cambios y hosting</h2>
+
+    <p class="mt-6 text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Nos encargamos de que tu web siga funcionando, mejorando y creciendo
+      con el tiempo. Tú solo te enfocas en tu negocio.
+    </p>
+  </div>
+
+  <!-- GRID DE BLOQUES -->
+  <div class="grid md:grid-cols-2 gap-16">
+
+    <!-- Bloque Mantenimiento y Cambios -->
+    <div class="space-y-6 hero-fade-up">
+      <div class="flex items-center gap-4">
+        <div class="process-icon w-16 h-16 rounded-full bg-blue-600/20 flex items-center justify-center shadow-lg shadow-blue-900/40">
+          <!-- ICONO MANTENIMIENTO (llave inglesa sencilla) -->
+          <svg viewBox="0 0 24 24" class="w-9 h-9 text-blue-300" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3.5a4.5 4.5 0 0 0-3.7 7.1L6 16.8 4.2 18.6a1.5 1.5 0 1 0 2.1 2.1L8.1 18l6.2-5.3A4.5 4.5 0 0 0 15 3.5z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Mantenimiento y cambios</h3>
+      </div>
+
+      <p class="text-slate-300 text-lg leading-relaxed">
+        Incluimos todos los cambios que tu web necesite a lo largo del tiempo: textos,
+        imágenes, secciones nuevas, ajustes visuales y mejoras.
+        Siempre tendrás tu web actualizada, sin complicaciones.
+      </p>
+
+      <ul class="space-y-3 text-slate-200 text-base">
+        <li>✔ Cambios de texto e imágenes</li>
+        <li>✔ Nuevas secciones y ajustes de diseño</li>
+        <li>✔ Revisión de velocidad y optimización</li>
+        <li>✔ Mejora de SEO técnico básico</li>
+        <li>✔ Soporte por WhatsApp o email</li>
+      </ul>
+
+      <p class="text-blue-400 font-semibold text-lg">
+        Desde <span class="text-blue-500">150€/mes</span> — sin permanencia.
+      </p>
+    </div>
+
+    <!-- Bloque Hosting -->
+    <div class="space-y-6 hero-fade-up hero-fade-up-delayed">
+      <div class="flex items-center gap-4">
+        <div class="process-icon w-16 h-16 rounded-full bg-blue-600/20 flex items-center justify-center shadow-lg shadow-blue-900/40">
+          <!-- ICONO HOSTING (globo / mundo) -->
+          <svg viewBox="0 0 24 24" class="w-9 h-9 text-blue-300" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8" />
+            <ellipse cx="12" cy="12" rx="4" ry="8" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <path d="M12 4a10 10 0 0 0 0 16" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Hosting profesional</h3>
+      </div>
+
+      <p class="text-slate-300 text-lg leading-relaxed">
+        Alojamos tu web en servidores rápidos y seguros. Nos encargamos de todo:
+        configuración, seguridad, dominio y mantenimiento del servidor.
+      </p>
+
+      <ul class="space-y-3 text-slate-200 text-base">
+        <li>✔ Servidor optimizado para velocidad</li>
+        <li>✔ Certificado SSL incluido</li>
+        <li>✔ Copias de seguridad automáticas</li>
+        <li>✔ Protección anti-ataques y monitorización</li>
+        <li>✔ Transferencia y dominio gestionado por nosotros</li>
+      </ul>
+
+      <p class="text-blue-400 font-semibold text-lg">
+        Alojamiento desde <span class="text-blue-500">15€/mes</span>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+</BaseLayout>
