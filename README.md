@@ -1,5 +1,23 @@
-🚀 DZW Agency – Web Development & Digital Solutions
+# DZW Agency - Landing Page
 
-Bienvenido al repositorio oficial de DZW Agency, una agencia especializada en el diseño y desarrollo de soluciones web modernas, enfocadas en rendimiento, escalabilidad y experiencia de usuario.
+Landing page moderna y de alto rendimiento desarrollada para **DZW Agency**. El proyecto está enfocado en la conversión, con una arquitectura optimizada y un diseño responsive impecable.
 
-Este proyecto representa la web corporativa de la agencia y sirve como carta de presentación de nuestros servicios y trabajos.
+## 🚀 Tecnologías
+
+- **Astro**: Framework web para una carga ultra rápida y entrega de HTML estático.
+- **JavaScript (Vanilla)**: Lógica de interactividad ligera sin sobrecarga de frameworks pesados.
+- **CSS3**: Estilos personalizados con metodologías modernas (Flexbox/Grid).
+
+## 🛠️ Características
+
+- **Zero JS por defecto**: Aprovecha la isla de hidratación de Astro solo donde es necesario.
+- **SEO Optimized**: Estructura de encabezados, meta-tags y carga de imágenes optimizada.
+- **Responsive Design**: Adaptabilidad total a dispositivos móviles, tablets y desktop.
+- **Performance**: Puntuaciones altas en Core Web Vitals gracias al renderizado estático.
+
+## 📦 Instalación y Uso
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/dzw-agency.git](https://github.com/tu-usuario/dzw-agency.git)
+   cd dzw-agency
